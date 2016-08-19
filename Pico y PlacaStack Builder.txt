@@ -1,0 +1,90 @@
+package picoyPlaca;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.text.DateFormatter;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class PicoyPlacaHoy {
+
+	public static void main(String[] args) {
+		
+		
+		int capturaDato;
+		int numeroPlaca;
+		String fechaDia;
+		int horaDia;
+		
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Ingrese el numero de su Matricula:");
+		numeroPlaca = entrada.nextInt();
+		capturaDato = numeroPlaca%10;
+		
+		if(capturaDato == 1 || capturaDato == 2 ){
+			
+			System.out.println("Su placa termina en: "+ " " +capturaDato);
+			System.out.println("Es lunes por lo tanto usted tiene pico y placa en la mañana desde las 7:00 hasta las 9:30 y en la tarde desde las 16:00 hasta las 19:30");		
+		}
+		
+		if(capturaDato == 3 || capturaDato == 4 ){
+			
+			System.out.println("Su placa termina en: "+ " " +capturaDato);
+			System.out.println("Es Martes por lo tanto usted tiene pico y placa en la mañana desde las 7:00 hasta las 9:30 y en la tarde desde las 16:00 hasta las 19:30");	
+		}
+		
+		if(capturaDato == 5 || capturaDato == 6 ){
+			
+			System.out.println("Su placa termina en: "+ " " +capturaDato);
+			System.out.println("Es Miercoles por lo tanto usted tiene pico y placa en la mañana desde las 7:00 hasta las 9:30 y en la tarde desde las 16:00 hasta las 19:30");
+				
+		}
+		
+		if(capturaDato == 7 || capturaDato == 8 ){
+			
+			System.out.println("Su placa termina en: "+ " " +capturaDato);
+			System.out.println("Es Jueves por lo tanto usted tiene pico y placa en la mañana desde las 7:00 hasta las 9:30 y en la tarde desde las 16:00 hasta las 19:30");	
+		}
+		if(capturaDato == 9 || capturaDato == 0 ){
+			
+			System.out.println("Su placa termina en: "+ " " +capturaDato);
+			System.out.println("Es Viernes por lo tanto usted tiene pico y placa en la mañana desde las 7:00 hasta las 9:30 y en la tarde desde las 16:00 hasta las 19:30");
+		}
+		
+		System.out.println("");
+		
+		System.out.println("Ingrese la fecha por favor con formato dd/MM/yyyy:");
+		fechaDia = entrada.next();	
+		System.out.println("");
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+					
+			Calendar calendario = Calendar.getInstance();
+			
+			int hora, minutos, segundos;
+							
+			hora = calendario.get(Calendar.HOUR_OF_DAY);
+			minutos = calendario.get(Calendar.MINUTE);
+			segundos = calendario.get(Calendar.SECOND);
+			System.out.println("la hora es:"+ " "+hora +":"+ minutos+":"+ segundos);
+			
+			//EL SISTEMA COGE LA HORA DE LA MAQUINA Y COMPARA SI ESTA EN ESTADO NORMAL O EN PICO Y PLACA
+			
+			if(hora >= 07 && hora<10 || hora >=16 && hora<20 ){
+				
+				
+				System.out.println("Horario de pico y placa");
+			}
+			else{
+				
+				System.out.println("El vehiculo esta en estado normal");
+			}	
+	}
+}
+		
+		
